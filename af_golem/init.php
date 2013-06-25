@@ -62,7 +62,8 @@ class Af_Golem extends Plugin {
 
 		if (strpos($article["guid"], "golem.de") !== FALSE) {
 			if (strpos($article["plugin_data"], "golem,$owner_uid:") === FALSE) {
-				if( ($content = $this->load_page($article["link"]) ) != FALSE) {
+
+				if( ($content = $this->load_page($article["link"])) != FALSE) {
 					$article["content"] = $content;
 					$article["plugin_data"] = "golem,$owner_uid:" . $article["plugin_data"];
 				}
